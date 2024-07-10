@@ -2,8 +2,12 @@ import pandas as pd
 
 
 def dataset_info(dataframe: pd.DataFrame):
-    """ TODO:
-    """
+    print("Information about non-null values, memory and data types:\n")
+    dataframe.info()
+    print("Number of duplicated entries in the table: ", dataframe.duplicated().sum())
+    print("Maximum temperature reached: ", dataframe.temp_max.max())
+    print("Minimum temperature reached: ", dataframe.temp_min.min())
+    print("Most common weather: ", dataframe.weather.value_counts().idxmax())
 
 
 def temp_max_histplot(dataframe: pd.DataFrame):
