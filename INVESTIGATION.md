@@ -2,7 +2,7 @@
 
 ## Task 1 - Dataset
 
-The table needs to be analysed in order to understand verify values and understand the logic.
+The table needs to be analysed in order to verify values and understand the logic.
 
 ### _dataframe.info()_
 `Shows more information about each column of the table, including the total number of entries in
@@ -37,3 +37,27 @@ Minimum temperature reached:  -7.1
 selects the attribute with the biggest number.`
 
 Most common weather:  rain
+
+## Task 2 - Plots
+### Maximum temperature shown using simple Histplot
+The approximate average temperature reached through the years is between 10 and 15 degrees.
+![max_temp_histplot.png](images/max_temp_histplot.png)
+
+### Maximum temperature shown using simple FaceGrid Lineplot
+The temperatures through the years tend to have the same maximum value and concave curve.
+
+![max_temp_facegrid_lineplot.png](images/max_temp_facegrid_lineplot.png)
+
+### Precipitation shown using simple FaceGrid Scatterplot
+In 2015, there are more values that tend to reach the maximum number of precipitations.
+
+![precipitation_facegrid_scatterplot.png](images/precipitation_facegrid_scatterplot.png)
+
+### Weather conditions shown using countplot
+By analysing the plot, it is remarked that it has rained the most throughout the years. The sunny
+days are also tending to reach maximum value.
+![weather_countplot.png](images/weather_countplot.png)
+
+### Weather conditions shown using pieplot
+All the values are calculated using percentages.
+![weather_pieplot.png](images/weather_pieplot.png)
