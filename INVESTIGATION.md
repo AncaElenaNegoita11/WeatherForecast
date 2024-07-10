@@ -61,3 +61,14 @@ days are also tending to reach maximum value.
 ### Weather conditions shown using pieplot
 All the values are calculated using percentages.
 ![weather_pieplot.png](images/weather_pieplot.png)
+
+## Task 3 - Weather Prediciton
+### Linear Regression - Default
+![lr_default.png](images/lr_default.png)
+
+### Linear Regression - Random
+![lr_random.png](images/lr_random.png)
+
+### Linear SVR
+![svr.png](images/svr.png)
+
