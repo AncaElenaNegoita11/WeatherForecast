@@ -74,6 +74,7 @@ def lr_predictor(X_test, y_test, regression):
     plt.plot(X_test_plot, predictions_plot, color="red", label="Predicted")
     plt.scatter(X_test_plot, predictions_plot)
     plt.title("Linear Regression")
+    plt.legend()
     plt.show()
 
 
@@ -85,6 +86,7 @@ def lr_predictor_random_split(dataframe: pd.DataFrame):
     y_train = df_train.temp_max
     y_test = df_test.temp_max
     linear_regression = LinearRegression().fit(X_train.drop(['date'], axis=1), y_train)
+    print("LR predictor random split:")
     lr_predictor(X_test, y_test, linear_regression)
 
 
@@ -92,6 +94,7 @@ def lr_predictor_default_split(dataframe: pd.DataFrame):
     features = dataframe[["precipitation", "date", "month", "year", "wind", "temp_min"]].dropna()
     X_train, X_test, y_train, y_test = train_test_split(features, dataframe.temp_max, test_size=.2, shuffle=False)
     linear_regression = LinearRegression().fit(X_train.drop(['date'], axis=1), y_train)
+    print("LR predictor default split:")
     lr_predictor(X_test, y_test, linear_regression)
 
 
@@ -100,14 +103,13 @@ def svr_predictor_default_split(dataframe: pd.DataFrame):
     X_train, X_test, y_train, y_test = train_test_split(features, dataframe.temp_max, test_size=.2, shuffle=False)
     regression = make_pipeline(StandardScaler(), LinearSVR(random_state=0, tol=1e-5))
     regression.fit(X_train.drop(['date'], axis=1), y_train)
+    print("SVR predictor default split:")
     lr_predictor(X_test, y_test, regression)
 
 
 def main():
     df = pd.read_csv('seattle-weather.csv')
-    print(df.head())
     df['date'] = pd.to_datetime(df['date'])
-    print(df.head())
     dataset_info(df)
     temp_max_histplot(df)
     temp_max_facegrid_lineplot(df)

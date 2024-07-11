@@ -63,12 +63,31 @@ All the values are calculated using percentages.
 ![weather_pieplot.png](images/weather_pieplot.png)
 
 ## Task 3 - Weather Prediciton
+In the following graphs, the blue line represents the actual data that was provided(test data),
+while the red line represents the prediction made by using different approaches in linear regression
+algorithms.
+
 ### Linear Regression - Default
+The predictions of the provided data are generated using Machine Learning.
+In the first method, the dataset is divided using standard split(80% train, 20% test) and 
+test_and_split function.
+
 ![lr_default.png](images/lr_default.png)
 
+R2 score:  0.7936850590036182
+Mean squared error:  11.297832171916607
+
 ### Linear Regression - Random
+This method uses a defined part of the dataset as train data(1300 entries), and the rest as tests.
+
 ![lr_random.png](images/lr_random.png)
+
+R2 score:  0.8334768729365956
+Mean squared error:  9.57073469668931
 
 ### Linear SVR
 ![svr.png](images/svr.png)
+
+R2 score:  0.7770169202956801
+Mean squared error:  12.210581548336291
 
